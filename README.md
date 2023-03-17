@@ -80,13 +80,16 @@ Event(is_prime, sum_rolls).show()
 > P(False) = [...exact fraction...] ~ 82.26%\
 > P(True) = [...exact fraction...] ~ 17.74%
 
-If you can compute this, you can compute (almost) everything 😉 ...such as the number of pairs of 10 after a 20d10 roll:
+If you can compute this, you can compute (almost) everything 😉 ...such as the of successes for a peculiar game (number of 10 + 2 bonus per pair of tens) after a 20d10 roll:
 ```
 from rollpy import Roll, Event, reduce
 
 roll_10 = Event(lambda x: x==10, Roll(10)) # Event for 1d10 rolled 10 (or not)
 
-Event(lambda rolls: sum(rolls)//2, [roll_10]*20).show()
+nb_10s = reduce(sum, [roll_10]*20)
+
+nb_successes = Event(lambda x: x+x//2, nb_10s)
+nb_successes.show()
 ```
 
 ## How does it work?
