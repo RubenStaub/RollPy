@@ -80,7 +80,7 @@ Event(is_prime, sum_rolls).show()
 > P(False) = [...exact fraction...] ~ 82.26%\
 > P(True) = [...exact fraction...] ~ 17.74%
 
-If you can compute this, you can compute (almost) everything 😉 ...such as the of successes for a peculiar game (number of 10 + 2 bonus per pair of tens) after a 20d10 roll:
+If you can compute this, you can compute (almost) everything 😉 ...such as the number of successes for a peculiar game (number of 10 + 2 bonus per pair of tens) after a 20d10 roll:
 ```
 from rollpy import Roll, Event, reduce
 
